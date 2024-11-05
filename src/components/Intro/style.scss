@@ -1,0 +1,16 @@
+.intro {
+  background-color: white;
+  width: 90%;
+}
+
+.MainWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 375px;
+  max-width: 540px;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  background-color: white;
+  height: 100vh;
+}
