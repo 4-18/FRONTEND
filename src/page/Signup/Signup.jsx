@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './style.scss';
+import './SignUpPagestyle.scss';
 import InputName from "../../components/SignUp/inputName";
 import InputID from "../../components/SignUp/inputID";
 import InputNickname from "../../components/SignUp/inputNickname";

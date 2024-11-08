@@ -1,4 +1,4 @@
-import './style.scss';
+import './Signupstyle.scss';
 
 export const NextBtn = ({ onClick, isActive }) => {
   return (

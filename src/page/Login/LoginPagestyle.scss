@@ -1,0 +1,18 @@
+.LogMainWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  background: #FFFFFF;
+  min-height: 100vh;
+  gap:80px;
+}
+
+.input{
+  display: flex;
+  flex-direction: column;
+  gap:10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

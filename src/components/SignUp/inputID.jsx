@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './style.scss';
+import './Signupstyle.scss';
 import before from "../../assets/images/before.svg";
 import error1 from "../../assets/images/error (1).svg";
 import error from "../../assets/images/error.svg";
