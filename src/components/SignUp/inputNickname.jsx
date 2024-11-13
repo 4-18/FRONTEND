@@ -1,5 +1,5 @@
 import React, { useState } from 'react'; 
-import './style.scss'; 
+import './Signupstyle.scss'; 
 import pro from "../../assets/images/progress.svg"
 import pro1 from "../../assets/images/progress(1).svg"
 import before from "../../assets/images/before.svg"
