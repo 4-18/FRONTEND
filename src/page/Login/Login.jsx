@@ -7,6 +7,7 @@ import UserPW from '../../components/Login/userPW';
 
 export const LoginPage = () => {
   return (
+    <div className='MainWrapper'>
     <div className='LogMainWrapper'>
       <LoginMent />
       <div className='input'>
@@ -17,6 +18,7 @@ export const LoginPage = () => {
         < LoginBtn />
         < SignUpBtn />
       </div>
+    </div>
     </div>
   );
 };

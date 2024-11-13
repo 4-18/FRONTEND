@@ -1,9 +1,11 @@
-.MainsWrapper {
+.MainPageWrapper {
   display: flex;
   flex-direction: column;
   width: 100%;
   align-items: center;
   justify-content: center;
-  background: #FFFFFF;
-  height: 100vh;
+  background: #F55B03;
+  // height: 100vh;
+  gap:20px;
+  min-height: 100vh;
 }

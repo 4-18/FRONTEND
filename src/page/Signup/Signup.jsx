@@ -31,7 +31,7 @@ export const Signup = () => {
   };
 
   return (
-    <div className='MainWrapper'>
+    <div className='MainsWrapper'>
       {step === 0 && <InputName onBack={handleBack} setName={setName} />}
       {step === 1 && <InputID onBack={handleBack} setId={setId} setPasswordValid={setPasswordValid} />}
       {step === 2 && <InputNickname onBack={handleBack} onNicknameChange={setNickname} />}

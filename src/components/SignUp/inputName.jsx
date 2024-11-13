@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // useNavigate 추가
+import { useNavigate } from 'react-router-dom'; 
 import './Signupstyle.scss'; 
 import pro from "../../assets/images/progress.svg";
 import pro1 from "../../assets/images/progress(1).svg";
@@ -7,7 +7,7 @@ import before from "../../assets/images/before.svg";
 
 export const InputName = ({ setName }) => {
   const [name, setLocalName] = useState("");
-  const navigate = useNavigate(); // useNavigate 훅 사용
+  const navigate = useNavigate(); 
 
   const handleInputChange = (e) => {
     setLocalName(e.target.value);       
@@ -15,7 +15,7 @@ export const InputName = ({ setName }) => {
   };
 
   const handleBack = () => {
-    navigate('/login'); // 이전 버튼 클릭 시 '/login' 경로로 이동
+    navigate('/login'); 
   };
 
   return (

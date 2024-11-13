@@ -2,7 +2,7 @@ import './Signupstyle.scss';
 
 export const NextBtn = ({ onClick, isActive }) => {
   return (
-    <div className='MainWrapper'>
+    <div className='MainssWrapper'>
       <button 
         className={`Btn ${isActive ? 'active' : ''}`} 
         onClick={onClick} 

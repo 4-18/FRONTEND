@@ -15,8 +15,10 @@ const Intro = () => {
   }, [navigate]);
 
   return (
+    <div className="MainWrapper">
     <div className="IntroMainWrapper">
       <img src={Logo} alt="로고" />
+    </div>
     </div>
   );
 };
