@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: center;
   background: #FFFFFF;
-  height: 100vh;
+  // height: 100vh;
 }
 
 
@@ -22,6 +22,26 @@
   margin-top: 30px;
   background-color: white;
   cursor: pointer;
+}
+
+.FinishWrapper{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  background: #F55B03;
+  // height: 100vh;
+  gap:20px;
+  min-height: 100vh;
+  min-width: 480px;
+  justify-content: center;
+  text-align: center;
+  color: #FFF;
+  font-family: 'NanumSquareRoundB';
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 35px; 
 }
 
 .Btn.active {

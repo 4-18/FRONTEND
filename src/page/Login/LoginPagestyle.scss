@@ -8,6 +8,19 @@
   // height: 100vh;
   gap:80px;
   min-height: 100vh;
+  min-width: 480px;
+}
+
+.MainLoginWrapper{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  background: #F55B03;
+  // height: 100vh;
+  gap:20px;
+  min-height: 100vh;
+  min-width: 480px;
 }
 
 .input{

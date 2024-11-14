@@ -1,7 +1,7 @@
 .BtnMainWrapper {
   display: flex;
   flex-direction: column;
-  width: 430px;
+  width: 100%;
   height: 70px;
   align-items: center;
   justify-content: center;
@@ -73,7 +73,7 @@
 }
 
 .UserMent{
-  width: 70%;
+  width: 60%;
   color: #000;
   font-family: 'NanumSquareRoundR';
   font-size: 20px;
