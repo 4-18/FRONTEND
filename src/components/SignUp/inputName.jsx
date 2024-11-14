@@ -37,7 +37,6 @@ export const InputName = ({ setName }) => {
           <img src={pro} alt='진행률'/>
           <img src={pro1} alt='진행률'/>
           <img src={pro1} alt='진행률'/>
-          <img src={pro1} alt='진행률'/>
         </div>
       </div>
     </>

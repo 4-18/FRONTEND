@@ -1,21 +1,17 @@
-import React, { useState } from 'react'; 
-import './Signupstyle.scss'; 
-import pro from "../../assets/images/progress.svg"
-import pro1 from "../../assets/images/progress(1).svg"
-import before from "../../assets/images/before.svg"
-import error1 from "../../assets/images/error (1).svg"
+import React, { useState } from 'react';
+import './Signupstyle.scss';
+import pro from "../../assets/images/progress.svg";
+import pro1 from "../../assets/images/progress(1).svg";
+import before from "../../assets/images/before.svg";
+import error1 from "../../assets/images/error (1).svg";
 
 export const InputNickname = ({ onBack, onNicknameChange }) => {
   const [nickname, setNickname] = useState(""); 
 
   const handleNicknameChange = (e) => {
     const newNickname = e.target.value;
-    setNickname(newNickname); 
+    setNickname(newNickname);
     onNicknameChange(newNickname);
-  };
-
-  const handleDuplicateCheck = (e) => {
-    e.preventDefault();
   };
 
   return (
@@ -27,24 +23,22 @@ export const InputNickname = ({ onBack, onNicknameChange }) => {
         <div className='NameMent'>활동할 닉네임을<br/>입력해주세요</div>
         <div className='Password'>
           <div className='ID'>
-            <input 
-              className='NameInput' 
-              placeholder='닉네임 입력' 
-              value={nickname} 
+            <input
+              className='NameInput'
+              placeholder='닉네임 입력'
+              value={nickname}
               onChange={handleNicknameChange}
             />
-            <button className='idbtn' onClick={handleDuplicateCheck}>중복 확인</button>
           </div>
           <div className='errorment1'>
             <img src={error1} alt='에러' />
-            부적절한 닉네임<br/>· 비속어를 통해 상대를 비방하는 표현<br/>· 불쾌감을 줄 수 있는 표현<br/>· 사회/정치적 입장을 나타내는 표현
+            부적절한 닉네임<br/>· 비속어를 통해 상대를 비방하는 표현<br/>· 불쾌감을 줄 수 있는 닉네임
           </div>
         </div>
         <div className='progress'>
-          <img src={pro1} alt='진행률'/>
-          <img src={pro1} alt='진행률'/>
-          <img src={pro} alt='진행률'/>
-          <img src={pro1} alt='진행률'/>
+          <img src={pro1} alt='진행률' />
+          <img src={pro1} alt='진행률' />
+          <img src={pro} alt='진행률' />
         </div>
       </div>
     </>
