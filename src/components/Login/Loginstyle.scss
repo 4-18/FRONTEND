@@ -1,0 +1,84 @@
+.BtnMainWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 70px;
+  align-items: center;
+  justify-content: center;
+  background: #FFFFFF;
+}
+.loginBtn {
+  width: 306px;
+  height: 60px;
+  flex-shrink: 0;
+  border-radius: 20px;
+  border: #F55B03;
+  background: #F55B03;
+  color: #FFF;
+  font-family: 'NanumSquareRoundB';
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.signUpBtn {
+  width: 306px;
+  height: 60px;
+  flex-shrink: 0;
+  border-radius: 20px;
+  border: 0.7px solid #F55B03;
+  background: #FFFFFF;
+  color: #F55B03;
+  font-family: 'NanumSquareRoundB';
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.loginMent{
+  width: 300px;
+  background-color: white;
+  color: #F55B03;
+  font-family: 'NanumSquareRoundB';
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.UserInputBox{
+  display: flex;
+  justify-content: center;
+  width: 306px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 20px;
+  background: #D9D9D9;
+}
+
+.UserInput{
+  width:90%;
+  border:none;
+  outline: none;
+  background: #D9D9D9;
+  font-family: 'NanumSquareRoundR';
+  font-size: 19px;
+}
+
+.UserInput::placeholder{
+  color: #FFF;
+  font-family: 'NanumSquareRoundR';
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.UserMent{
+  width: 60%;
+  color: #000;
+  font-family: 'NanumSquareRoundR';
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 6px;
+}
