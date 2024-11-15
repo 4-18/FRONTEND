@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import './recipePlus.scss';
+import useAuthStore from '../../store/store';
+import { useNavigate } from 'react-router-dom';
+
 
 export const RecipePlusItems = () => {
+  const token = useAuthStore.getState().token; 
   const [recipeSteps, setRecipeSteps] = useState([""]);
   const [imagePreview, setImagePreview] = useState(null);
   const [storeSelections, setStoreSelections] = useState([{
@@ -14,6 +18,8 @@ export const RecipePlusItems = () => {
   const [recipeName, setRecipeName] = useState(""); 
   const maxLength = 20;
   const stepMaxLength = 50;
+  const navigate = useNavigate();
+
 
   const handleRecipeNameChange = (e) => {
     const value = e.target.value;
@@ -124,6 +130,9 @@ export const RecipePlusItems = () => {
     try {
       const response = await fetch("http://15.165.181.78/recommendations", {
         method: "POST",
+        headers: {
+          "Authorization": `Bearer ${token}`
+        },
         body: formData,
       });
 
@@ -131,6 +140,8 @@ export const RecipePlusItems = () => {
       console.log("Response Data:", data);
       if (response.status === 200) {
         console.log("레시피가 성공적으로 등록되었습니다.");
+        alert("🍳🥙🥩🍜레시피가 성공적으로 등록되었습니다🍕🍔🍟🌭");
+        navigate('/main');
       } else {
         console.error("레시피 등록에 실패했습니다.");
       }
@@ -268,9 +279,9 @@ export const RecipePlusItems = () => {
           <button className="add-step" onClick={addRecipeStep}>+</button>
         </div>
       </div>
-      
-      <div className="submit">
-        <button className="submit-button" onClick={handleSubmit}>레시피 등록</button>
+
+      <div className="submit-button">
+        <button className='postBtn' onClick={handleSubmit}>편슐랭 올리기</button>
       </div>
     </div>
   );

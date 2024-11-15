@@ -19,6 +19,7 @@ import StoreListGS from './page/list/StoreListGS'
 import StoreListCU from './page/list/StoreListCU'
 import StoreList7 from './page/list/StoreList7'
 import TypeList from './page/list/TypeList'
+
 import './axiosConfig'; // axios 설정 파일 import
 
 const App = () => {
