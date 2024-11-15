@@ -11,12 +11,15 @@ import SignUp from './page/Signup/Signup';
 import MainPage from './page/MainPage/mainpage';
 import RecipePlusPage from './page/recipePlusPage/recipePlusPage';
 import FinishLogin from './components/SignUp/finishlogin';
-import MyRecipePage from './page/mypage/MyRecipePage';
-import ProductLike from './page/mypage/ProductLike';
-import RecipeLike from './page/mypage/RecipeLike';
-import RecipeSave from './page/mypage/RecipeSave';
-import StoreListGS from './page/list/StoreListGS';
-import TypeList from './page/list/TypeList';
+import MyRecipePage from './page/mypage/MyRecipePage'
+import ProductLike from './page/mypage/ProductLike'
+import RecipeLike from './page/mypage/RecipeLike'
+import RecipeSave from './page/mypage/RecipeSave'
+import StoreListGS from './page/list/StoreListGS'
+import StoreListCU from './page/list/StoreListCU'
+import StoreList7 from './page/list/StoreList7'
+import TypeList from './page/list/TypeList'
+
 import './axiosConfig'; // axios 설정 파일 import
 
 const App = () => {
@@ -31,6 +34,8 @@ const App = () => {
         <Route path='/finish' element={<FinishLogin />} />
         <Route path='/TypeList' element={<TypeList />} />
         <Route path='/StoreListGS' element={<StoreListGS />} />
+        <Route path='/StoreListCU' element={<StoreListCU />} />
+        <Route path='/StoreList7' element={<StoreList7 />} />
         <Route path='/MyPage' element={<Mypage />} />
         <Route path='/MyRecipePage' element={<MyRecipePage />} />
         <Route path='/ProductLike' element={<ProductLike />} />
