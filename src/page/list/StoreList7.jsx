@@ -6,7 +6,7 @@ import mypage_icon from '../../assets/img/mypage_icon.svg'
 import search_icon from '../../assets/img/search_icon.svg'
 import Product from '../../components/Product'
 
-const StoreList = () => {
+const StoreList7 = () => {
     const [rangeValue, setRangeValue] = useState(0);
 
     const handleRangeChange = (e) => {
@@ -81,4 +81,4 @@ const StoreList = () => {
     )
 }
 
-export default StoreList
+export default StoreList7

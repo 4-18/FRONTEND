@@ -15,7 +15,8 @@
     "react-router-dom": "^6.27.0",
     "react-scripts": "5.0.1",
     "sass": "^1.80.5",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "zustand": "^5.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -45,5 +46,7 @@
       "@types/googlemaps": "^3.43.3",
       "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
       "@babel/plugin-transform-private-property-in-object": "^7.25.9"
-    }
+    },
+  "proxy": "http://15.165.181.78"
+
 }
