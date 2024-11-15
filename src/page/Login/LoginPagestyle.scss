@@ -1,3 +1,19 @@
+/* 부모 컨테이너 - MainLoginWrapper */
+.MainLoginWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;  /* 화면 크기 꽉 채우기 */
+  height: 100vh; /* 화면 세로 크기 꽉 채우기 */
+  align-items: center;
+  justify-content: center;
+  background: #FFFFFF;
+  gap: 20px;
+  min-width: 430px;  /* 최소 화면 너비 설정 */
+  min-height: 950px; /* 최소 화면 높이 설정 */
+  padding: 0;  /* 여백 제거 */
+  box-sizing: border-box; /* 패딩을 포함한 크기 계산 */
+}
+
 .LogMainWrapper {
   display: flex;
   flex-direction: column;
@@ -5,33 +21,43 @@
   align-items: center;
   justify-content: center;
   background: #FFFFFF;
-  // height: 100vh;
-  gap:80px;
-  min-height: 100vh;
-  min-width: 480px;
+  gap: 80px;
+  padding: 0 20px; /* 양옆 여백을 줘서 작은 화면에서 너무 붙지 않도록 함 */
+  box-sizing: border-box; /* 패딩을 포함한 크기 계산 */
 }
 
-.MainLoginWrapper{
+.input {
   display: flex;
   flex-direction: column;
   width: 100%;
-  align-items: center;
-  background: #F55B03;
-  // height: 100vh;
-  gap:20px;
-  min-height: 100vh;
-  min-width: 480px;
-}
-
-.input{
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  gap:10px;
+  gap: 10px;
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
-.btn{
+.btn {
   width: 100%;
+}
+
+/* 미디어 쿼리 - 화면 크기에 맞게 조정 */
+@media (max-width: 480px) {
+  .LogMainWrapper {
+    gap: 40px; /* 화면 크기에 맞춰 여백 조정 */
+    padding: 0 10px; /* 작은 화면에서의 패딩 크기 조정 */
+  }
+
+  .input {
+    gap: 8px; /* 입력창 간격 조정 */
+  }
+
+  .btn {
+    gap: 10px; /* 버튼 간격 조정 */
+  }
+}
+
+@media (max-width: 320px) {
+  .LogMainWrapper {
+    gap: 20px;
+    padding: 0 5px; /* 너무 작은 화면에서의 패딩을 더 줄임 */
+  }
 }

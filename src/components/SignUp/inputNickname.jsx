@@ -20,7 +20,7 @@ export const InputNickname = ({ onBack, onNicknameChange }) => {
         <img src={before} alt='이전 버튼' />
       </div>
       <div className='MainWrapperName'>
-        <div className='NameMent'>활동할 닉네임을<br/>입력해주세요</div>
+        <div className='NameMent2'>활동할 닉네임을<br/>입력해주세요</div>
         <div className='Password'>
           <div className='ID'>
             <input
