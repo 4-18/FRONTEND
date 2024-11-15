@@ -11,23 +11,13 @@ import SignUp from './page/Signup/Signup';
 import MainPage from './page/MainPage/mainpage';
 import RecipePlusPage from './page/recipePlusPage/recipePlusPage';
 import FinishLogin from './components/SignUp/finishlogin';
-<<<<<<< HEAD
-import Mypage from './page/mypage/Mypage'
-import MyRecipePage from './page/mypage/MyRecipePage'
-import ProductLike from './page/mypage/ProductLike'
-import RecipeLike from './page/mypage/RecipeLike'
-import RecipeSave from './page/mypage/RecipeSave'
-import StoreListGS from './page/list/StoreListGS'
-import TypeList from './page/list/TypeList'
-=======
 import MyRecipePage from './page/mypage/MyRecipePage';
 import ProductLike from './page/mypage/ProductLike';
 import RecipeLike from './page/mypage/RecipeLike';
 import RecipeSave from './page/mypage/RecipeSave';
-import StoreList from './page/list/StoreList';
+import StoreListGS from './page/list/StoreListGS';
 import TypeList from './page/list/TypeList';
 import './axiosConfig'; // axios 설정 파일 import
->>>>>>> main
 
 const App = () => {
   return (

@@ -115,6 +115,7 @@
 .recipe-steps {
   width: 100%;
   margin-bottom: 15px;
+  text-decoration: none; 
   label {
     display: block;
     font-size: 14px;
@@ -150,10 +151,13 @@
     width: 28px;
     height: 28px;
     flex-shrink: 0;
+    text-decoration: none; 
   }
 }
 
 .submit-button {
+  display: flex;
+  justify-content: center;
   background-color: #F55B03;
   border: none;
   cursor: pointer;
@@ -163,14 +167,19 @@
   height: 34px;
   flex-shrink: 0;
   color: #FFF;
-  font-family: 'NanumSquareRoundR';
   font-size: 12px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
   margin-bottom: 50px;
+  text-decoration: none; 
 }
-
+.postBtn{
+  background-color: #F55B03;
+  border: none;
+  color:white;
+  font-family: 'NanumSquareRoundR';
+}
 .store-selections {
   width: 100%;
   .store-selection {

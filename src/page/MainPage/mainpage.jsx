@@ -1,20 +1,29 @@
 import './mainpage.scss';
-import { useEffect } from 'react'; // useEffect import
+import { useEffect } from 'react';
 import StorePick from '../../components/MainPage/storePick';
 import CatePick from '../../components/MainPage/catePick';
 import MainHeader from '../../components/MainPage/header';
 import Banner from '../../components/MainPage/banner';
 import useAuthStore from '../../store/store';
 import MainListPage from '../../components/MainPage/MainListPage';
+import plus from "../../assets/images/plusre.svg";
+import { useNavigate } from 'react-router-dom';
 
 export const MainPage = () => {
+  const navigate = useNavigate();
+
   const checkToken = () => {
     const token = useAuthStore.getState().token;
     console.log('저장된 토큰:', token);
   };
+
   useEffect(() => {
     checkToken();
   }, []);
+
+  const handlePlusButtonClick = () => {
+    navigate('/recipe-plus');
+  };
 
   return (
     <div className="MainPageWrapper">
@@ -25,6 +34,12 @@ export const MainPage = () => {
       <div className='ListUp'>
         <MainListPage />
       </div>
+      <img 
+        className='myplusbtn' 
+        src={plus} 
+        alt='플러스버튼' 
+        onClick={handlePlusButtonClick}
+      />
     </div>
   );
 };

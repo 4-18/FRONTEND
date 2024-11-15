@@ -1,5 +1,6 @@
 .MainPageWrapper {
   display: flex;
+  position: relative;
   flex-direction: column;
   width: 100%;
   align-items: center;
@@ -11,4 +12,11 @@
 
 .ListUp{
   width: 100%;
+}
+
+.myplusbtn {
+  z-index: 200;
+  position: absolute;
+  top: 730px;
+  right: 30px;
 }
