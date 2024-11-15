@@ -17,9 +17,15 @@
             height: 24px;
         }
 
-        .title {
-            font-size: 20px;
-            font-weight: 700;
+        .gs {
+            height: 22px;
+        }
+        .cu {
+            background-color: #00000000;
+            height: 45px;
+        }
+        .seven {
+            height: 45px;
         }
 
         .mypage_icon {
@@ -201,13 +207,9 @@
         }
     }
     .list_div{
-        display: flex;
-        flex-wrap: wrap;
         margin-top: 9px;
-        gap: 10px;
         margin-left: 57.5px;
         margin-right: 57.5px;
-        justify-content: center;
     }
 
 }
