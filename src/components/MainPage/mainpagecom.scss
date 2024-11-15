@@ -20,6 +20,118 @@
   padding-top: 20px;
 }
 
+.MainListWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  position: absolute; 
+  top: auto; 
+  left: 0;
+  width: 100%;
+  background-color: #FFFFFF;
+  right: 0;
+  overflow-y: auto; 
+  transition: height 0.3s, top 0.3s; 
+  z-index: 1;
+  border-radius: 60px 60px 0px 0px;
+
+  &.expanded {
+    height: 87%; 
+    bottom: 0;
+    z-index: 100;
+  }
+
+  &.collapsed {
+    height: 500px;
+  }
+}
+
+.toggleImage {
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.selectList{
+  display: flex;
+  width: 80%;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.recommend{
+  width: 100%;
+  display: flex;
+  color:#D9D9D9;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-family: 'NanumSquareRoundB';
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: -0.24px;
+  gap:10px;
+  cursor: pointer;
+}
+
+.recipeList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px; 
+  margin-right: 10px;
+}
+
+.recipeRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.new{
+  width: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-family: 'NanumSquareRoundB';
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px; 
+  letter-spacing: -0.24px;
+  gap:10px;
+  color:#D9D9D9;
+  cursor: pointer;
+}
+
+.recommend.active,
+.new.active {
+  color: #F55B03;
+}
+
+.recommendLine{
+  background: #D9D9D9; 
+  width: 100%;
+  height: 3px;
+  flex-shrink: 0;
+}
+
+.newLine{
+  background: #D9D9D9;
+  width: 100%;
+  height: 3px;
+  flex-shrink: 0;
+}
+
+.recommend.active .recommendLine,
+.new.active .newLine {
+  background: #F55B03;
+}
+
 .BannerWrapper {
   display: flex;
   position: relative; 
@@ -144,8 +256,6 @@
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   gap: 5px;
-  margin-left: 4px ;
-  margin-right: 12px;
 }
 
 .catebox img {
