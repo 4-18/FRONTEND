@@ -1,10 +1,14 @@
 .MainsWrapper {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 100vw;  /* 화면 크기 꽉 채우기 */
+  height: 100vh;  /* 화면 세로 크기 꽉 채우기 */
   align-items: center;
   justify-content: center;
   background: #FFFFFF;
-  min-height: 100vh;
-  min-width: 480px;
+  min-width: 430px;  /* 최소 너비 설정 (작은 화면에서 깨지지 않게) */
+  min-height: 950px; /* 최소 높이 설정 (작은 화면에서 깨지지 않게) */
+  padding: 0;  /* 여백 제거 */
+  box-sizing: border-box; /* 패딩을 포함한 크기 계산 */
 }
+

@@ -32,8 +32,7 @@
   background: #F55B03;
   // height: 100vh;
   gap:20px;
-  min-height: 100vh;
-  min-width: 480px;
+  min-width: 430px;
   justify-content: center;
   text-align: center;
   color: #FFF;
@@ -42,6 +41,10 @@
   font-style: normal;
   font-weight: 700;
   line-height: 35px; 
+  height: 100vh;  /* 화면 높이 꽉 차게 */
+  min-height: 900px;  /* 최소 높이 설정 */
+  padding: 0 10px;  /* 양옆 여백을 적당히 주어 화면에 맞게 */
+  box-sizing: border-box;
 }
 
 .Btn.active {
@@ -82,6 +85,19 @@
   font-weight: 700;
   line-height: normal;
   margin-bottom: 30px;
+}
+
+.NameMent2{
+  width: 61%;
+  height: 35px;
+  flex-shrink: 0;
+  color: #F55B03;
+  font-family: 'NanumSquareRound';
+  font-size: 23px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 100px;
 }
 
 .Name{
