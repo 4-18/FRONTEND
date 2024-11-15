@@ -6,7 +6,7 @@ export const SignUpBtn = () => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate('/signup'); // '/signup' 경로로 이동
+    navigate('/signup'); 
   };
 
   return (

@@ -1,3 +1,4 @@
+// InputID.jsx
 import React, { useState } from 'react';
 import './Signupstyle.scss';
 import before from "../../assets/images/before.svg";
@@ -6,9 +7,9 @@ import error from "../../assets/images/error.svg";
 import pro from "../../assets/images/progress.svg";
 import pro1 from "../../assets/images/progress(1).svg";
 
-export const InputID = ({ onBack, setId, setPasswordValid }) => {
+export const InputID = ({ onBack, setId, setPassword, setPasswordValid }) => {
   const [id, setLocalId] = useState("");
-  const [password, setPassword] = useState("");
+  const [password, setLocalPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
   const validatePassword = (password) => {
@@ -24,7 +25,8 @@ export const InputID = ({ onBack, setId, setPasswordValid }) => {
 
   const handlePasswordChange = (event) => {
     const passwordValue = event.target.value;
-    setPassword(passwordValue);
+    setLocalPassword(passwordValue);
+    setPassword(passwordValue); // 부모 컴포넌트에 비밀번호 전달
     setPasswordValid(validatePassword(passwordValue) && passwordValue === confirmPassword);
   };
 

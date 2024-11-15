@@ -6,7 +6,7 @@ import check from "../../assets/images/ei_check.svg";
 export const FinishLogin = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const username = location.state?.username || "회원";
+  const name = location.state?.name || "회원";
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -19,7 +19,7 @@ export const FinishLogin = () => {
   return (
     <div className='FinishWrapper'>
       <img src={check} alt='회원가입완료' />
-      <div className='finishment'>{username} 님, <br/>가입이 완료되었습니다 !</div>
+      <div className='finishment'>{name} 님, <br/>가입이 완료되었습니다 !</div>
     </div>
   );
 };
