@@ -12,7 +12,6 @@ import useAuthStore from '../../store/store'; // zustand 스토어 import
 export const LoginPage = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [message, setMessage] = useState('');
   const navigate = useNavigate();
   const setToken = useAuthStore((state) => state.setToken);
 
@@ -41,7 +40,6 @@ export const LoginPage = () => {
       console.log('로그인 성공:', response.data);
 
       if (response.status === 200) {
-        setMessage(response.data.message);
         const token = response.headers['accesstoken'];
         const pureToken = token.replace('Bearer ', '');// 예시로 응답 헤더에서 토큰 가져오기 (헤더 이름에 따라 다를 수 있음)
         if (token) {
