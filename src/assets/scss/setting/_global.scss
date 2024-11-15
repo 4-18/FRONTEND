@@ -46,6 +46,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
+
 html {
   display: flex;
   justify-content: center;
@@ -62,11 +63,12 @@ html {
 body {
   width: 100%;
   max-width: 540px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+  // align-items: center;
   overflow-x: hidden;
-  background-color: #da9090;
+  background-color: #fbe3e3;
   color: #000000;
   font-family: "NanumSquareRoundB", "NanumSquareRoundR", "NanumSquareRoundL","HakgyoB", "HakgyoR" sans-serif;
 }

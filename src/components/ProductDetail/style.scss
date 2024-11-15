@@ -1,0 +1,148 @@
+.product-detail-page {
+    background-color: #fff;
+}
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 80px;
+}
+
+.product-info {
+    text-align: center;
+}
+
+.product-name,
+.product-price {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.product-price {
+    color: gray;
+    margin-bottom: 20px;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.combo-button {
+    background: #F55B03;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer; /* 커서 모양 추가 */
+}
+
+.like-button {
+    display: flex;
+    align-items: center;
+    border: 1px solid #F55B03;
+    border-radius: 5px;
+    padding: 10px 15px;
+    background: #fff;
+    cursor: pointer; /* 커서 모양 추가 */
+}
+
+.like-button:hover {
+    background: #FEEFE7; /* 호버 효과 추가 */
+}
+
+ .like-icon {
+    margin-right: 5px;
+    font-size: 18px;
+    color: #F55B03;
+}
+
+.like-count  {
+    color: #F55B03;
+    font-size: 16px;
+}
+
+.comment-list {
+    width: 100%; 
+}
+
+.comment {
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+
+.comment .nickname {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.comment .content {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+.comment .date {
+    font-size: 14px;
+    color: #666;
+}
+
+.comment .actions {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 14px;
+    color: #F55B03;
+}
+
+.comment-form {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #F55B03;
+    background: #fff;
+}
+
+.comment-form input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    outline: none;
+    background: #fff;
+    font-size: 16px;
+    color: #333;
+}
+
+.comment-form input::placeholder {
+    color: #F55B03;
+}
+
+.comment-form button {
+    background: none;
+    border: none;
+    color: #F55B03;
+    cursor: pointer; /* 커서 모양 추가 */
+}
+
+.comment-form button:hover {
+    color: #D64500; /* 호버 효과 추가 */
+}
+
+.circle-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1.5px solid #F55B03;
+    font-size: 20px;
+    font-weight: bold;
+}
