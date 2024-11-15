@@ -1,0 +1,180 @@
+.StoreMainWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  background: #F55B03;
+  // height: 100vh;
+  // min-height: 100vh;
+  gap:10px;
+}
+
+.HeaderWrapper {
+  display: flex;
+  width: 100%;
+  height: 100px;
+  align-items: flex-end;
+  justify-content: space-around;
+  background: #F55B03;
+  padding-top: 20px;
+}
+
+.BannerWrapper {
+  display: flex;
+  position: relative; 
+  width: 100%;
+  height: 70px;
+  align-items: center;
+  justify-content: space-around;
+  background: #FFFFFF;
+  box-shadow: 0px 5px 2px 0px rgba(0, 0, 0, 0.25) inset;
+}
+
+.BannerMent{
+  text-align: center;
+  color: #000;
+  text-align: center;
+  font-family: 'NanumSquareRoundR';
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: -0.24px;
+}
+
+.point{
+  color: #F55B03;
+  font-family: 'NanumSquareRoundB';
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: -0.24px;
+}
+.BannerWrapper img:first-of-type {
+  position: absolute;
+  top:13px;
+  left: 5px;
+  width: 55px;
+}
+
+.BannerWrapper img:last-of-type {
+  position: absolute;
+  top:-5px;
+  right: 3px;
+  width: 60px;
+}
+.MentBox{
+  width: 80%;
+}
+
+.StoreMent{
+  border-radius: 20px;
+  border: 1px solid #FFF;
+  width: 92px;
+  height: 26px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #FFF;
+  font-family: 'NanumSquareRoundR';
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.CateMent{
+  border-radius: 20px;
+  border: 1px solid #FFF;
+  width: 110px;
+  height: 26px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #FFF;
+  font-family: 'NanumSquareRoundR';
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.imgGroup{
+  display: flex;
+  width: 80%;
+  height: 62px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: #FFF;
+  align-items: center;
+  justify-content: space-around;
+}
+.one{
+  margin-left: 5%;
+}
+.two{
+  
+}
+.three{
+  margin-left: 3%;
+  margin-right: 7%;
+}
+.bar{
+  width: 1px;
+  height: 41px;
+  flex-shrink: 0;
+  background: #D9D9D9;
+}
+
+.carousel-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+}
+
+.catebox {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  gap: 5px;
+  margin-left: 4px ;
+  margin-right: 12px;
+}
+
+.catebox img {
+  flex: 0 0 auto;
+  width: 100px;
+  height: auto;
+  scroll-snap-align: start;
+}
+
+.scroll-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.left {
+  left: 0;
+}
+
+.right {
+  right: 0;
+}
+
+.mainlogo{
+  width: 70px;
+}

@@ -1,0 +1,10 @@
+.RecipePlusWrapper {
+  display: flex;
+  flex-direction: column;
+  min-width: 480px;
+  align-items: center;
+  background: #FFFFFF;
+  // height: 100vh;
+  gap:20px;
+  min-height: 100vh;
+}
