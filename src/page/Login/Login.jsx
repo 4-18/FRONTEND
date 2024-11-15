@@ -14,18 +14,36 @@ export const LoginPage = () => {
   const navigate = useNavigate();
 
   const handleLogin = async () => {
-    const formData = new FormData();
-    formData.append('username', username);
-    formData.append('password', password);
-
     try {
-      const response = await axios.post('http://15.165.181.78/users/login', formData, {
-        headers: { 'Content-Type': 'multipart/form-data' },
-      });
+      const loginData = {
+        username,
+        password,
+      };
+
+      const response = await axios.post(
+        'http://15.165.181.78/users/login', 
+        loginData, 
+        {
+          withCredentials: true,
+          headers: { 
+            'Content-Type': 'application/json',
+          },
+        }
+      );
+
       console.log('로그인 성공:', response.data);
-      navigate('/main');
+      
+      if (response.data && response.data.success) {
+        navigate('/main');
+      } else {
+        console.error('로그인 실패:', response.data ? response.data.message : '알 수 없는 오류');
+      }
     } catch (error) {
-      console.error('로그인 오류:', error);
+      if (error.response) {
+        console.error('로그인 오류:', error.response.data);
+      } else {
+        console.error('네트워크 오류 또는 서버 접근 불가:', error.message);
+      }
     }
   };
 

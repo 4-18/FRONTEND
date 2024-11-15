@@ -13,20 +13,22 @@ export const Signup = () => {
   const [name, setName] = useState("");
   const [id, setId] = useState("");
   const [nickname, setNickname] = useState("");
+  const [password, setPassword] = useState(""); // Add password state
   const [passwordValid, setPasswordValid] = useState(false);
 
   const handleNext = async () => {
     if (step === 2) {
       const userData = {
         username: id,
+        name: name,
+        password: password,
         nickname: nickname,
-        password: '1234',
       };
 
       try {
         const response = await axios.post('http://15.165.181.78/users', userData);
         console.log(response.data);
-        navigate('/finish', { state: { username: id } });
+        navigate('/finish', { state: { name } }); // Pass name to the finish page
       } catch (error) {
         console.error("회원가입 오류:", error);
       }
@@ -49,7 +51,7 @@ export const Signup = () => {
   return (
     <div className='MainsWrapper'>
       {step === 0 && <InputName onBack={handleBack} setName={setName} />}
-      {step === 1 && <InputID onBack={handleBack} setId={setId} setPasswordValid={setPasswordValid} />}
+      {step === 1 && <InputID onBack={handleBack} setId={setId} setPasswordValid={setPasswordValid} setPassword={setPassword} />}
       {step === 2 && <InputNickname onBack={handleBack} onNicknameChange={setNickname} />}
       <NextBtn onClick={handleNext} isActive={isButtonActive()} />
     </div>
