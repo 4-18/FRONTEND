@@ -288,3 +288,138 @@
 .mainlogo{
   width: 70px;
 }
+
+.recipeList {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);  // 2개씩 가로로 나열
+  gap: 20px;  // 카드 간의 간격
+  margin-right: 10px;
+}
+
+.recipeRow {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.myrecipe_wraps .wheres {
+  display: flex;
+  margin-top: 2px;
+  margin-right: 2px;
+  gap: 3px; /* 원 간의 간격을 설정 */
+  flex-wrap: wrap; /* 반응형 디자인을 고려해 필요 시 줄바꿈 */
+}
+
+.myrecipe_wraps .wheres .locations {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 17px;
+  border-radius: 20px; /* 원 모양 */
+  background-color: #F55B03; /* 배경색 */
+  font-size: 12px;
+  color: #333;
+  color: #000;
+  text-align: center;
+  font-family: 'NanumSquareRoundR';
+  font-size: 8px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 250% */
+  letter-spacing: -0.24px;
+  color: white;
+}
+
+
+.myrecipe_wraps {
+  margin-left: 10px;
+  width: 125px;
+  height: 150px;
+  background-color: #FEE7DA;
+  border-radius: 10px;
+
+  .imgs {
+      display: flex;
+      align-items: flex-end;
+      flex-direction: column;
+      justify-content: space-between;
+      border: 1px solid #D9D9D9;
+      background-color: #fff;
+      height: 108px;
+      border-top-right-radius: 10px;
+      border-top-left-radius: 10px;
+      flex: 0 0 auto; /* 높이는 비율에 맞춰 자동으로 설정 */
+      object-fit:cover; /* 비율 유지하면서 크기 맞추기 */
+    
+      
+
+      .edit_divs {
+          display: flex;
+          margin-right: 4px;
+          margin-bottom: 5px;
+
+          .edits {
+              display: flex;
+              width: 26px;
+              height: 17px;
+              background-color: #fff;
+              color: #F55B03;
+              font-size: 8px;
+              font-family: NanumSquareRoundL;
+              border: 1px solid #D9D9D9;
+              align-items: center;
+              justify-content: center;
+              border-radius: 20px;
+              margin-right: 2px;
+          }
+      }
+  }
+
+
+
+  .titles {
+    font-size: 12px;
+    margin-left: 10px;
+    margin-top: 2px;
+    height: 17px;
+    font-family: NanumSquareRoundR;
+    white-space: nowrap; /* 텍스트가 한 줄로 유지되도록 설정 */
+    overflow: hidden;    /* 넘치는 텍스트를 숨김 */
+    text-overflow: ellipsis; /* 넘칠 경우 "..."으로 표시 */
+}
+
+
+  .bottoms {
+      display: flex;
+      justify-content: space-between;
+
+      .names {
+          font-size: 8px;
+          font-weight: 300px;
+          margin-left: 10px;
+          font-family: NanumSquareRoundL;
+          margin-top: 2px;
+          height: 14px;
+      }
+
+      .greats {
+          display: flex;
+          align-items: center;
+          margin-top: 3px;
+
+          imgs {
+              width: 11px;
+              height: 11px;
+              margin-top: 7px;
+              margin-right: 5px;
+          }
+
+          .nums {
+              font-size: 8px;
+              margin-right: 10px;
+              height: 14px;
+          }
+      }
+  }
+}

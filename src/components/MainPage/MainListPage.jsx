@@ -18,16 +18,11 @@ export const MainListPage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.post('http://15.165.181.78/recommendations', 
-          {
-            sort: sortType, // POST 요청의 데이터 부분에 sortType 포함
+        const response = await axios.get(`http://15.165.181.78/recommendations/${sortType}`, {
+          headers: {
+            Authorization: `Bearer ${token}`, // Authorization 헤더에 토큰 추가
           },
-          {
-            headers: {
-              Authorization: `Bearer ${token}`, // Authorization 헤더에 토큰 추가
-            },
-          }
-        );
+        });
         setRecipes(response.data.data); // 받아온 데이터 처리
       } catch (error) {
         console.error('Failed to fetch recipes:', error.response || error.message);
@@ -85,5 +80,6 @@ export const MainListPage = () => {
     </div>
   );
 };
+
 
 export default MainListPage;
