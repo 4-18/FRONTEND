@@ -12,7 +12,7 @@ import MyRecipePage from './page/mypage/MyRecipePage'
 import ProductLike from './page/mypage/ProductLike'
 import RecipeLike from './page/mypage/RecipeLike'
 import RecipeSave from './page/mypage/RecipeSave'
-import StoreList from './page/list/StoreList'
+import StoreListGS from './page/list/StoreListGS'
 import TypeList from './page/list/TypeList'
 
 const App = () => {
@@ -26,7 +26,7 @@ const App = () => {
         <Route path='/recipe-plus' element={<RecipePlusPage />} />
         <Route path='/finish' element={<FinishLogin />} />
         <Route path='/TypeList' element={<TypeList />} />
-        <Route path='/StoreList' element={<StoreList />} />
+        <Route path='/StoreListGS' element={<StoreListGS />} />
         <Route path='/MyPage' element={<Mypage />} />
         <Route path='/MyRecipePage' element={<MyRecipePage />} />
         <Route path='/ProductLike' element={<ProductLike />} />
