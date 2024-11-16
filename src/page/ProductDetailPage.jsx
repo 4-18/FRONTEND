@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Header from '../components/Header/Header';
+import DetailHeader from '../components/DetailHeader/DetailHeader';
 import ProductInfo from '../components/ProductDetail/ProductInfo';
 import ActionButtons from '../components/ProductDetail/ActionButtons';
 import CommentList from '../components/ProductDetail/CommentList';
@@ -31,7 +31,7 @@ const ProductDetailPage = () => {
 
   return (
     <div className="product-detail-page">
-      <Header onBackClick={handleBackClick} />
+      <DetailHeader />
       <div className="content-wrapper">
         <ProductInfo product={product} />
         <ActionButtons onCombo={() => navigate('/recipe-detail')} />
