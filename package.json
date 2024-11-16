@@ -46,6 +46,5 @@
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@babel/plugin-transform-private-property-in-object": "^7.25.9",
     "@types/googlemaps": "^3.43.3"
-  },
-  "proxy": "http://15.165.181.78"
+  }
 }

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Header from '../components/Header/Header';
+import DetailHeader from '../components/DetailHeader/DetailHeader';
 import IngredientsList from '../components/RecipeDetail/IngredientsList';
 import Recipe from '../components/RecipeDetail/Recipe';
 import CommentList from '../components/RecipeDetail/CommentList';
@@ -45,7 +45,7 @@ const RecipeDetailPage = () => {
 
   return (
     <div className="recipe-detail-page">
-      <Header onBackClick={handleBackClick} />
+      <DetailHeader />
       <div className="content-wrapper">
         <div className="recipe-info">
           <img src={recipe.image} alt={recipe.name} className="recipe-image" />
