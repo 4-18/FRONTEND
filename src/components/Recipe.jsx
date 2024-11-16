@@ -1,13 +1,19 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 import great from '../assets/img/great.svg'
 
 
 const Recipe = ({ recipes }) => {
+  const navigate = useNavigate(); // navigate 함수 사용
+  const handleDetailClick = (id) => {
+    navigate(`/recipe-detail/${id}`); // id를 URL에 추가하여 페이지 이동
+  };
+
   return (
     <div className='recipe_list_wrap'>
       {recipes && recipes.length > 0 ? (
         recipes.map((recipe) => (
-          <div key={recipe.id} className='recipe_wrap'>
+          <div key={recipe.id} className='recipe_wrap' onClick={() => handleDetailClick(recipe.id)}>
             <div
               className="img"
               style={{

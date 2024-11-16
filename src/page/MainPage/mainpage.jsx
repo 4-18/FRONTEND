@@ -12,15 +12,6 @@ import { useNavigate } from 'react-router-dom';
 export const MainPage = () => {
   const navigate = useNavigate();
 
-  const checkToken = () => {
-    const token = useAuthStore.getState().token;
-    console.log('저장된 토큰:', token);
-  };
-
-  useEffect(() => {
-    checkToken();
-  }, []);
-
   const handlePlusButtonClick = () => {
     navigate('/recipe-plus');
   };
