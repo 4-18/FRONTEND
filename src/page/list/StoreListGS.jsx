@@ -4,23 +4,29 @@ import axiosInstance from '../../api/api'; // axiosInstance를 사용
 import useAuthStore from '../../store/store'; // zustand 상태 관리 불러오기
 import back from '../../assets/img/back_black.svg'
 import GS25 from '../../assets/img/GS25_icon.svg'
+import plus from '../../assets/img/plus.svg'
 import mypage_icon from '../../assets/img/mypage_icon.svg'
 import search_icon from '../../assets/img/search_icon.svg'
 import Product from '../../components/Product'
 import Recipe from '../../components/Recipe';
 
 const StoreListGS = () => {
-    const [rangeValue, setRangeValue] = useState(0);
+    const [rangeValue, setRangeValue] = useState(50000);
     const [isProductView, setIsProductView] = useState(true);
     const [GSProducts, setGSProducts] = useState([]); // 필터링된 상품 상태
     const [recipes, setRecipes] = useState([]); // 레시피 데이터를 저장하는 상태
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const [selectedOption, setSelectedOption] = useState('전체'); // select의 선택된 옵션
+    const [selectedCategory, setSelectedCategory] = useState(''); // 선택된 카테고리
 
     const token = useAuthStore((state) => state.token); // zustand로 토큰 가져오기
     const navigate = useNavigate();
+    const categories = ['면류', '밥류', '간식류', '음료류', '다이어트류'];
 
+    const GoToPlus = () =>{
+        navigate('/recipe-plus')
+    }
     // 전체 데이터를 가져오는 함수
     const fetchAllProducts = async () => {
         try {
@@ -115,8 +121,17 @@ const StoreListGS = () => {
             });
 
             if (response.status === 200) {
+                
                 const filtered = response.data.data.filter(product => product.availableAt.includes('GS'));
-                setRecipes(filtered);
+                console.log(selectedCategory);
+                if (selectedOption === '전체') {
+                    setRecipes(filtered);
+                }
+                // else if (selectedCategory === '면류') {
+                //     const Typefiltered = filtered.filter(product => product.foodType.includes('면류'));
+                //     setRecipes(Typefiltered);
+                // }
+
             }
         } catch (error) {
             setError('추천순 레시피 데이터를 가져오는 중 오류가 발생했습니다.');
@@ -159,6 +174,31 @@ const StoreListGS = () => {
             fetchNewRecipes();
         }
     }, [selectedOption, token]);
+    // 카테고리 데이터를 가져오는 함수
+    const fetchCategoryData = async (category) => {
+        try {
+            setLoading(true);
+            const response = await axiosInstance.get(`/products/category/${category}`, {
+                headers: {
+                    Authorization: `Bearer ${token}`, // 토큰이 있으면 헤더에 추가
+                },
+            });
+
+            if (response.status === 200) {
+                const filtered = response.data.data.filter(product => product.availableAt.includes('GS'));
+                setGSProducts(filtered); // 가져온 데이터 설정
+            }
+        } catch (error) {
+            setError('카테고리 데이터를 가져오는 중 오류가 발생했습니다.');
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    const handleCategoryClick = (category) => {
+        setSelectedCategory(category);
+        fetchCategoryData(category);
+    };
 
     // select 변경 핸들러
     const handleSelectChange = (e) => {
@@ -193,19 +233,23 @@ const StoreListGS = () => {
                 <img src={search_icon} alt="" />
             </div>
             <div className="types">
-                <div className="choice">#면류</div>
-                <div className="type">#밥류</div>
-                <div className="type">#간식류</div>
-                <div className="type">#음료류</div>
-                <div className="type">#다이어트류</div>
+                {categories.map((category) => (
+                    <div
+                        key={category}
+                        className={selectedCategory === category ? 'choice' : 'type'}
+                        onClick={() => handleCategoryClick(category)}
+                    >
+                        #{category}
+                    </div>
+                ))}
             </div>
             <div className="title_div">
                 <p className="title">오늘의 가격</p>
-                <p className="price">34,000</p>
+                <p className="price">{rangeValue}</p>
             </div>
             <div className='range'>
                 <input type="range" min={0}
-                    max={34000}
+                    max={50000}
                     value={rangeValue}
                     onChange={handleRangeChange}
                     style={{
@@ -240,6 +284,9 @@ const StoreListGS = () => {
                 ) : (
                     <Recipe recipes={recipes} /> // Recipe 컴포넌트에 데이터 전달
                 )}
+            </div>
+            <div className="plus" onClick={GoToPlus}>
+                <img src={plus} alt="" />
             </div>
         </div>
     )

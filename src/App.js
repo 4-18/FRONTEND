@@ -12,6 +12,7 @@ import MainPage from './page/MainPage/mainpage';
 import RecipePlusPage from './page/recipePlusPage/recipePlusPage';
 import FinishLogin from './components/SignUp/finishlogin';
 import MyRecipePage from './page/mypage/MyRecipePage'
+import MyRecipeChangePage from './page/mypage/MyRecipeChange'
 import ProductLike from './page/mypage/ProductLike'
 import RecipeLike from './page/mypage/RecipeLike'
 import RecipeSave from './page/mypage/RecipeSave'
@@ -38,11 +39,12 @@ const App = () => {
         <Route path='/StoreList7' element={<StoreList7 />} />
         <Route path='/MyPage' element={<Mypage />} />
         <Route path='/MyRecipePage' element={<MyRecipePage />} />
+        <Route path='/MyRecipeChangePage/:id' element={<MyRecipeChangePage />} />
         <Route path='/ProductLike' element={<ProductLike />} />
         <Route path='/RecipeLike' element={<RecipeLike />} />
         <Route path='/RecipeSave' element={<RecipeSave />} />
-        <Route path='/product-detail' element={<ProductDetailPage />} />
-        <Route path='/recipe-detail' element={<RecipeDetailPage />} />
+        <Route path='/product-detail/:id' element={<ProductDetailPage />} />
+        <Route path='/recipe-detail/:id' element={<RecipeDetailPage />} />
         <Route path='/map' element={<MapPage />} />
       </Routes>
     </BrowserRouter>
