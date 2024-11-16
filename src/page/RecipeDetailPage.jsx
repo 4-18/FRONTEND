@@ -5,12 +5,11 @@ import Recipe from '../components/RecipeDetail/Recipe';
 import CommentList from '../components/RecipeDetail/CommentList';
 import CommentForm from '../components/RecipeDetail/CommentForm';
 import '../components/RecipeDetail/style.scss';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import axiosInstance from '../api/api'; // axiosInstance import
 
 
 const RecipeDetailPage = () => {
-  const navigate = useNavigate();
   const { id } = useParams();
 
   const [recipe, setRecipe] = useState(null);
@@ -30,13 +29,19 @@ const RecipeDetailPage = () => {
           const data = response.data.data;
           setRecipe({
             image: data.imageUrls,
-            name: data.title,
-            price: data.totalPrice,
-            ingredients: data.productList?.map(product => ({
+            title: data.title,
+            content: data.content,
+            availableAt: data.availableAt,
+            foodTypes: data.foodTypes,
+            products: data.productList?.map(product => ({
+              id: product.id,
               name: product.name,
               price: product.price,
+              availableAt: product.availableAt,
+              foodType: product.foodType,
+              imageUrl: product.imageUrl,
+              countLikes: product.countLikes,
             })) || [], // 데이터가 없을 경우 빈 배열 설정
-            steps: data.content ? data.content.split('.').filter(step => step.trim()) : [], // 데이터가 없을 경우 빈 배열 설정
           });
         } else {
           setError('레시피 정보를 가져오지 못했습니다.');
