@@ -1,7 +1,7 @@
 /*global kakao*/
 import React, { useEffect } from 'react';
 import '../components/Map/style.scss';
-import Header from '../components/Header/Header';
+import MapHeader from '../components/Map/MapHeader';
 import GS25Component from '../components/Map/GS25Component';
 import CUComponent from '../components/Map/CUComponent';
 import SevenElevenComponent from '../components/Map/SevenElevenComponent';
@@ -118,11 +118,10 @@ const Location = () => {
 
   return (
     <div className="convenience-store-map-page">
-      <Header onBackClick={handleBackClick} />
+      <MapHeader />
       <div className="content-wrapper">
       <div id="map" className="map-container"></div>
       <div className="filter-buttons">
-        <button onClick={() => handleButtonClick('전체')}>전체</button>
         <GS25Component onClick={() => handleButtonClick('GS25')} />
         <CUComponent onClick={() => handleButtonClick('CU')} />
         <SevenElevenComponent onClick={() => handleButtonClick('세븐일레븐')} />

@@ -56,6 +56,7 @@ const handleConfirmDelete = () => {
             <p className="title">{recipe.title}</p>
             <div className="bottom">
               <div className="name">{recipe.nickname ? `작성자: ${recipe.nickname}` : '작성자 정보 없음'}</div>
+
               <div className="great">
                 <img src={great} alt="좋아요" />
                 <p className="num">{recipe.countLikes ?? 0}</p> {/* 좋아요 수 렌더링 */}

@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import before from "../../assets/images/before.svg";
-import my from "../../assets/images/user(2).svg";
-import { useNavigate, useParams } from 'react-router-dom';
-import axiosInstance from '../../api/api';
+import before from "../../assets/images/before.svg"
+import my from "../../assets/images/user(2).svg"
+import { useNavigate, useParams } from 'react-router-dom'; // useParams 추가
+import axiosInstance from '../../api/api'; // axiosInstance 사용
 import useAuthStore from '../../store/store';
 
 const MyRecipeChange = () => {
-    const { id } = useParams();
+    const { id } = useParams(); // URL에서 id 가져오기
     const token = useAuthStore.getState().token;
     const [recipeSteps, setRecipeSteps] = useState([""]);
     const [imagePreview, setImagePreview] = useState(null);
@@ -37,6 +37,7 @@ const MyRecipeChange = () => {
         const fetchRecipeData = async () => {
             try {
                 const response = await axiosInstance.get(`/recommendations/${id}`, {
+
                     headers: {
                         Authorization: `Bearer ${token}`
                     }
@@ -53,6 +54,7 @@ const MyRecipeChange = () => {
                         product: product.name || "",
                         productId: product.id || "",
                         categoryProducts: []
+
                     })));
                 }
             } catch (error) {
@@ -182,6 +184,7 @@ const MyRecipeChange = () => {
             } else {
                 const errorData = await response.json();
                 console.error("레시피 수정에 실패했습니다.", errorData);
+
             }
         } catch (error) {
             console.error("서버 요청 실패:", error);
@@ -194,6 +197,7 @@ const MyRecipeChange = () => {
                 <img src={before} alt='이전' onClick={handleBackClick} />
                 <div className='recipePlusHeader'>나만의 편슐랭</div>
                 <img src={my} alt='마이페이지' onClick={GoToMypage} />
+
             </div>
             <div className="recipe-item-wrapper">
                 <div className="image-upload">
@@ -270,6 +274,7 @@ const MyRecipeChange = () => {
                                         }}
                                     >
                                         <option value="">{selection.product}</option>
+
                                         {selection.categoryProducts.map((product) => (
                                             <option key={product.id} value={product.name}>
                                                 {product.name} {product.price}원
