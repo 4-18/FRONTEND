@@ -43,7 +43,8 @@ const Mypage = () => {
     const fetchLikedRecipes = async () => {
         try {
             setLoading(true);
-            const response = await axiosInstance.get('/products/liked', {
+            const response = await axiosInstance.get('/recommendations/liked', {
+
                 headers: {
                     Authorization: `Bearer ${token}`, // 토큰이 있으면 헤더에 추가
                 },
@@ -110,7 +111,8 @@ useEffect(() => {
   const fetchMyRecipes = async () => {
       try {
           setLoading(true);
-          const response = await axiosInstance.get('/products/liked', {
+          const response = await axiosInstance.get('/recommendations/my', {
+
               headers: {
                   Authorization: `Bearer ${token}`, // 토큰이 있으면 헤더에 추가
               },

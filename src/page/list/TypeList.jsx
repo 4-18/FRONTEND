@@ -9,7 +9,7 @@ import axiosInstance from '../../api/api'; // axiosInstance 사용
 import useAuthStore from '../../store/store';
 
 const TypeList = () => {
-    const [rangeValue, setRangeValue] = useState(50000);
+    const [rangeValue, setRangeValue] = useState(34000);
     const [selectedOption, setSelectedOption] = useState('전체'); // select의 선택된 옵션
 
     const location = useLocation(); // location 객체 사용

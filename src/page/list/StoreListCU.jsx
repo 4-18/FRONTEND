@@ -11,7 +11,7 @@ import useAuthStore from '../../store/store'; // zustand 상태 관리 불러오
 import Recipe from '../../components/Recipe';
 
 const StoreListCU = () => {
-    const [rangeValue, setRangeValue] = useState(50000);
+    const [rangeValue, setRangeValue] = useState(34000);
     const [isProductView, setIsProductView] = useState(true);
     const [CUProducts, setCUProducts] = useState([]); // 필터링된 상품 상태
     const [recipes, setRecipes] = useState([]); // 레시피 데이터를 저장하는 상태
