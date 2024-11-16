@@ -44,6 +44,7 @@ const Mypage = () => {
         try {
             setLoading(true);
             const response = await axiosInstance.get('/recommendations/liked', {
+
                 headers: {
                     Authorization: `Bearer ${token}`, // 토큰이 있으면 헤더에 추가
                 },
@@ -111,6 +112,7 @@ useEffect(() => {
       try {
           setLoading(true);
           const response = await axiosInstance.get('/recommendations/my', {
+
               headers: {
                   Authorization: `Bearer ${token}`, // 토큰이 있으면 헤더에 추가
               },

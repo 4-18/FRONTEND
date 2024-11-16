@@ -249,7 +249,7 @@ const StoreListGS = () => {
             </div>
             <div className='range'>
                 <input type="range" min={0}
-                    max={34000}
+                    max={50000}
                     value={rangeValue}
                     onChange={handleRangeChange}
                     style={{
