@@ -22,7 +22,7 @@ const MainBox = ({ recipe, isUserPost }) => {
 
       <p className="titles">{recipe.title}</p>
       <div className="bottoms">
-        <div className="names">{recipe.userId}</div>
+        <div className="names">{recipe.nickname}</div>
         <div className="greats">
           <img src={great} alt="좋아요" />
           <p className="nums">{recipe.countLikes}</p>
