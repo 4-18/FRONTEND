@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import before from "../../assets/images/before.svg"
-import my from "../../assets/images/user(2).svg"
-import { useNavigate, useParams } from 'react-router-dom'; // useParams 추가
-import axiosInstance from '../../api/api'; // axiosInstance 사용
+import before from "../../assets/images/before.svg";
+import my from "../../assets/images/user(2).svg";
+import { useNavigate, useParams } from 'react-router-dom';
+import axiosInstance from '../../api/api';
 import useAuthStore from '../../store/store';
 
 const MyRecipeChange = () => {
-    const { id } = useParams(); // URL에서 id 가져오기
+    const { id } = useParams();
     const token = useAuthStore.getState().token;
     const [recipeSteps, setRecipeSteps] = useState([""]);
     const [imagePreview, setImagePreview] = useState(null);
@@ -24,11 +24,19 @@ const MyRecipeChange = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
+    const handleBackClick = () => {
+        navigate(-1);
+    };
+
+    const GoToMypage = () => {
+        navigate("/Mypage");
+    };
+
     // 레시피 정보 가져오기
     useEffect(() => {
         const fetchRecipeData = async () => {
             try {
-                const response = await axiosInstance.get(`/api/recommendations/${id}`, {
+                const response = await axiosInstance.get(`/recommendations/${id}`, {
                     headers: {
                         Authorization: `Bearer ${token}`
                     }
@@ -37,14 +45,14 @@ const MyRecipeChange = () => {
                 if (response.status === 200) {
                     const data = response.data.data;
                     setRecipeName(data.title || "");
-                    setRecipeSteps(data.content.split(" ") || [""]);
-                    setImagePreview(data.imageUrls ? data.imageUrls[0] : null); // 첫 번째 이미지 사용
+                    setRecipeSteps(Array.isArray(data.content) ? data.content : [data.content]); // content가 배열로 저장됨
+                    setImagePreview(data.imageUrls ? data.imageUrls : null);
                     setStoreSelections(data.productList.map(product => ({
-                        store: "", // 서버에서 store 정보를 제공하지 않는 경우 빈 문자열로 초기화
-                        category: product.foodType || "",
+                        store: product.availableAt && product.availableAt.length > 0 ? product.availableAt[0] : "",
+                        category: product.foodType.replace(/\[|\]/g, "") || "",
                         product: product.name || "",
                         productId: product.id || "",
-                        categoryProducts: [] // 선택 시 동적으로 불러올 수 있습니다
+                        categoryProducts: []
                     })));
                 }
             } catch (error) {
@@ -133,36 +141,47 @@ const MyRecipeChange = () => {
     const handleSubmit = async () => {
         const formData = new FormData();
         const imageInput = document.getElementById("image-upload-input");
-        const imageFile = imageInput.files[0];
-
+        const imageFile = imageInput?.files[0];
+    
         if (imageFile) {
+            // 파일을 추가
             formData.append("files", imageFile);
+        } else if (imagePreview) {
+            // 기존 이미지 URL을 Blob으로 변환하여 추가
+            try {
+                const response = await fetch(imagePreview);
+                const blob = await response.blob();
+                formData.append("files", blob, "existing_image.jpg");
+            } catch (error) {
+                console.error("이미지 URL을 Blob으로 변환하는 중 오류 발생:", error);
+            }
         }
-
+    
+        // JSON 데이터 추가
         const recommendationDto = {
             title: recipeName,
-            content: recipeSteps.join(" "),
-            productList: storeSelections.map(selection => selection.productId)
+            content: recipeSteps.join(" "), // 여러 단계의 레시피를 한 문자열로 합침
+            productList: storeSelections.map(selection => selection.productId) // 제품 ID 목록 생성
         };
-
+    
+        // JSON 데이터를 Blob으로 변환하여 FormData에 추가
         formData.append("updateRecommendationDto", new Blob([JSON.stringify(recommendationDto)], { type: "application/json" }));
-
+    
         try {
             const response = await fetch(`http://15.165.181.78/recommendations/${id}`, {
                 method: "PUT",
                 headers: {
-                    "Authorization": `Bearer ${token}`
+                    "Authorization": `Bearer ${token}` // Authorization 헤더는 필요시 추가
                 },
-                body: formData,
+                body: formData, // FormData를 body에 설정
             });
-
-            const data = await response.json();
-            if (response.status === 200) {
-                console.log("레시피가 성공적으로 수정되었습니다.");
+    
+            if (response.ok) {
                 alert("레시피가 성공적으로 수정되었습니다.");
                 navigate('/main');
             } else {
-                console.error("레시피 수정에 실패했습니다.");
+                const errorData = await response.json();
+                console.error("레시피 수정에 실패했습니다.", errorData);
             }
         } catch (error) {
             console.error("서버 요청 실패:", error);
@@ -170,11 +189,11 @@ const MyRecipeChange = () => {
     };
 
     return (
-        <div>
+        <div className='RecipePlusWrapper'>
             <div className='RecipeHeaderWrapper'>
-                <img src={before} alt='이전' />
+                <img src={before} alt='이전' onClick={handleBackClick} />
                 <div className='recipePlusHeader'>나만의 편슐랭</div>
-                <img src={my} alt='마이페이지' />
+                <img src={my} alt='마이페이지' onClick={GoToMypage} />
             </div>
             <div className="recipe-item-wrapper">
                 <div className="image-upload">
@@ -250,7 +269,7 @@ const MyRecipeChange = () => {
                                             handleProductSelect(e.target.value, selectedProduct?.id || "", index);
                                         }}
                                     >
-                                        <option value="">상품 이름</option>
+                                        <option value="">{selection.product}</option>
                                         {selection.categoryProducts.map((product) => (
                                             <option key={product.id} value={product.name}>
                                                 {product.name} {product.price}원

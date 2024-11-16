@@ -16,6 +16,7 @@ export const MainPage = () => {
     navigate('/recipe-plus');
   };
 
+
   return (
     <div className="MainPageWrapper">
       <MainHeader />

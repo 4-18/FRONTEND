@@ -11,7 +11,7 @@ import Product from '../../components/Product'
 import Recipe from '../../components/Recipe';
 
 const StoreListGS = () => {
-    const [rangeValue, setRangeValue] = useState(50000);
+    const [rangeValue, setRangeValue] = useState(34000);
     const [isProductView, setIsProductView] = useState(true);
     const [GSProducts, setGSProducts] = useState([]); // 필터링된 상품 상태
     const [recipes, setRecipes] = useState([]); // 레시피 데이터를 저장하는 상태
@@ -249,7 +249,7 @@ const StoreListGS = () => {
             </div>
             <div className='range'>
                 <input type="range" min={0}
-                    max={50000}
+                    max={34000}
                     value={rangeValue}
                     onChange={handleRangeChange}
                     style={{
