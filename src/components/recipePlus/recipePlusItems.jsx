@@ -140,7 +140,7 @@ export const RecipePlusItems = () => {
       console.log("Response Data:", data);
       if (response.status === 200) {
         console.log("레시피가 성공적으로 등록되었습니다.");
-        alert("🍳🥙🥩🍜레시피가 성공적으로 등록되었습니다🍕🍔🍟🌭");
+        alert("🥩🍜🥙🍳레시피가 성공적으로 등록되었습니다🍕🍔🍟🌭");
         navigate('/main');
       } else {
         console.error("레시피 등록에 실패했습니다.");
